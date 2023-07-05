@@ -18,5 +18,14 @@ module HelloRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Enable the asset pipeline
+    config.assets.enabled = true
+    config.assets.css_compressor = :sass
+
+    # Precompile additional assets
+    config.assets.precompile += %w( additional_asset.js additional_asset.css )
+
+
   end
 end
