@@ -1,0 +1,7 @@
+<nav>
+    <%= link_to text, url %>
+    <%= heading %>
+    <% if user_signed_in? %>
+      <%= link_to "Logout", sign_out_user_path, method: :get %>
+    <% end %>
+</nav>

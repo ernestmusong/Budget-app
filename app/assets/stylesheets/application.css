@@ -1,0 +1,293 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ 
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  width: 100%;
+  height: 70px;
+}
+
+.nav_link {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.notice_wrap {
+  margin: 0 auto;
+  padding: 5px;
+  width: auto;
+  margin-top: 60px;
+}
+
+main {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.link,
+.profile_wrap {
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list {
+  gap: 0.5rem;
+}
+
+.list a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.list .text {
+  border: 2px solid #000;
+  padding-left: 0.2rem;
+  border-radius: 4px;
+}
+
+.float {
+  text-align: right;
+}
+
+.list_item {
+  width: 100%;
+}
+
+#list_item {
+  margin-bottom: 2rem;
+}
+
+.photo {
+  width: 70px;
+  height: 70px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.profile_img {
+  max-width: 100%;
+}
+
+.user_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 4px;
+  height: 70px;
+  width: 80%;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.user_name p {
+  align-self: flex-end;
+}
+
+.bio {
+  border: 2px solid #000;
+  width: 100%;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-left: 0.2rem;
+}
+
+.btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.btn_container #next {
+  padding: 0.25rem 0.75rem;
+}
+
+.see_more {
+  text-align: center;
+  background: transparent;
+}
+
+.post {
+  width: 100%;
+}
+
+#list {
+  gap: 2rem;
+}
+
+.comments {
+  width: 100%;
+  margin-top: 2px;
+}
+
+.comments ul,
+.detail_comments {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding-left: 0.2rem;
+}
+
+.detail {
+  border: 2px solid #000;
+  border-radius: 4px;
+  margin-bottom: 2px;
+}
+
+.detail .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.detail .detail_text {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+/* --------------------------------Sign up form----------------------- */
+
+.form_wrapper {
+  height: auto;
+}
+
+.sign_up,
+.login,
+.edit {
+  text-align: center;
+}
+
+.cancelbtn_wrapper {
+  margin-top: 200px;
+}
+
+.back {
+  text-align: center;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  height: 50vh;
+}
+
+/* Style the form fields */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.have_account {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.field label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.field input,
+.field textarea {
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.field textarea {
+  height: 100px;
+}
+
+/* Style the file input */
+.field input[type="file"] {
+  height: auto;
+  padding: 0;
+  border: none;
+}
+
+/* Style the submit button */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.actions input[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.shared_links {
+  text-align: center;
+}
+
+.shared_links_wrap {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

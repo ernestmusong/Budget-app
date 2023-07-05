@@ -1,0 +1,29 @@
+<main>
+     <ul id="list" class="list">
+    <% @categories.each do |c| %>
+      <li class="list_item">
+            <%= link_to %>
+              <div class="item-wrapper">
+                <div class="photo">
+                    <% if c.photo.present? %>
+                    <%= image_tag c.photo, class: "profile_img" %>
+                    <% else %>
+                    <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: "profile_img" %>
+                    <% end %>
+                </div>
+                <div class="user_name">
+                    <p><%= c.name %></p>
+                </div>
+              </div>
+            <% end %>
+       </li>
+       <div class="created_at">
+        <p>@activity.created_at</p>
+       </div>
+       <div class="amount_wrap">
+        <p>Total Payment</p>
+        <p>@activity.amount</p>
+       </div>
+    <% end %>
+    </ul>
+</main>

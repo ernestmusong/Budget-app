@@ -1,0 +1,38 @@
+<main>
+    <div class="profile_wrap">
+        <div class="photo">
+             <% if @user.photo.present? %>
+                <%= image_tag user.photo %>
+              <% else %>
+                <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: 'profile_img' %>
+              <% end %>
+        </div>
+        <div class="user_name">
+            <h3><%= @user.name %></h3>
+            <p>Number of posts: <%= @user.posts.count %></p>
+        </div>
+    </div>
+    <div class="bio">
+        <h4>Bio</h4> <br/>
+        <p><%= @user.bio%></p>
+    </div>
+    <ul class="list">
+        <% @posts.each do |post|%>
+        <li class="text">
+            <%= link_to user_post_path(@user, post) do %>
+                <h4>Post #<%= post.id %></h4><br/>
+                <p><%= post.text %></p>
+                <p class="float">Comments:<%= post.comments.count %>, Likes: <%= post.likes.count %></p>
+            <% end %>
+        </li>
+        <% end %>
+    </ul>
+    <% if @user.posts.count > 0%>
+      <div class="btn_container">
+        <%= link_to 'See all posts', user_posts_path(@user) %>
+        <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+      </div>
+    <% else %>
+      <a href="/users/<%=@user.id%>/posts/new">Add New Post </a>
+    <% end %>
+</main>
