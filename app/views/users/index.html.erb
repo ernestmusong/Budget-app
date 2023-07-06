@@ -1,9 +1,9 @@
- <main class="splash_screen">
+ <div id="splash_screen">
   <div class="splash_text_wrap">
-    <h1>Welcome To Emmacroy Budget System</h1>
+    <h1>Welcome to Emma Budget System</h1>
   </div>
-  <div class="splash_text_wrap">
-    <%= link_to "Sign up", new_user_registration_path %>
-    <%= link_to "Login", new_user_session_path %>
+  <div class="splash_btn_wrap">
+    <%= link_to "Login", new_user_session_path, class: "splash_btn", id: "login" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "splash_btn", id: "signup" %>
   </div>
- </main>
+ </div>

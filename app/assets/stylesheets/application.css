@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+
 :root {
    --mainBlue: #3778c2;
    --secondaryGreen: #5fb523;
@@ -55,8 +57,44 @@ nav a {
 
 main {
   background: var(--mainWhite);
-  border: 2px solid #999;
+  border: 2px solid #777;
   height: calc(100vh - 70px);
+}
+
+#splash_screen {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  border: 2px solid #777;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.registrations {
+  height: calc(100vh - 70px);
+  position: fixed;
+  border: 2px solid #777;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.splash_text_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+
+.splash_text_wrap h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  font-family: 'Fasthand', cursive;
+  font-weight: bold;
+  color: #777;
 }
 
 .total_transaction {
@@ -136,11 +174,68 @@ main {
   place-items: center;
 }
 
+/* -------------------------------------------File upload-----------------*/
+
+.reg {
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+#register_photo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-file-input input[type="file"] {
+  visibility: hidden;
+  width: 1px;
+  height: 1px;
+}
+
+.custom-file-input label {
+  display: block;
+  background-color: #fff;
+  color: #777;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-file-input label::after {
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.custom-file-input input[type="file"]:focus + label::after {
+  color: #000;
+}
+
+#p_img {
+  border-radius: 50px;
+}
+
+/* -------------------------------------------End File upload-----------------*/
+
+
 .profile_img {
   max-width: 100%;
 }
 
-.add_btn_wrap {
+.add_btn_wrap,
+.splash_btn_wrap {
   width: 100%;
   height: 70px;
   display: flex;
@@ -155,7 +250,15 @@ main {
   padding-right: 0.5rem;
 }
 
-.add_btn {
+.splash_btn_wrap {
+  flex-direction: column;
+  height: auto;
+  background-color: transparent;
+  border: none;
+}
+
+.add_btn,
+.splash_btn {
   text-decoration: none;
   border: 2px solid var(--mainWhite);
   border-radius: 4px;
@@ -165,6 +268,29 @@ main {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-transform: uppercase;
+}
+
+.splash_btn {
+  border: none;
+}
+
+#login {
+  background: var(--mainBlue);
+}
+
+#signup {
+  color: #777;
+}
+
+.notice_wrap {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.notice {
+  color: var(--secondaryGreen);
+  text-align: center;
 }
 
 .btn_container #next {
@@ -252,9 +378,9 @@ form {
 }
 
 .actions input[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  font-size: 16px;
+  background-color: var(--secondaryGreen);
+  color: #f0f0f0;
+  font-size: 1rem;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
