@@ -1,7 +1,7 @@
 <main>
-   <%= render partial: 'shared/nav', locals: { text: 'Back', url: user_categories_path(@user), heading: 'ADD NEW TRANSACTION'  } %>
+   <%= render partial: 'shared/nav', locals: { text: 'Back', url: user_category_activities_path(current_user, @category), heading: 'ADD NEW TRANSACTION'  } %>
 
-<%= form_with model: @activity,  method: :post do |form| %>
+<%= form_with model: @activity, url: user_category_activities_path(current_user, @category),  method: :post do |form| %>
   <% if @activity.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(@category.errors.count, "error") %> prohibited Transaction from being saved:</h2>
@@ -15,18 +15,15 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: 'Name' %>
   </div>
 
   <div class="field">
-    <%= form.label :amount %><br />
-    <%= form.number_field :amount %>
+    <%= form.number_field :amount, placeholder: 'Amount' %>
   </div>
 
   <div class="field">
-    <%= form.label :categories %><br />
-    <%= form.select :categories, Category.pluck(:name, :id) %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, include_blank: 'Select category' %>
   </div>
 
 

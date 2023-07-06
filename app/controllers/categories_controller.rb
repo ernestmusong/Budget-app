@@ -10,8 +10,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = current_user.categories.find(params[:id])
-    # @activities = @category.activities
+    @user = current_user
+    @category = @user.categories.includes(:author).find(params[:id])
+    @activities = @category.activities
   end
 
   def new

@@ -15,13 +15,11 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
+      <%= form.text_field :name, placeholder: 'Name' %>
     </div>
 
     <div class="field">
-        <%= form.label :icon %><br />
-        <%= form.file_field :icon %>
+        <%= form.file_field :icon, placeholder: 'Upload icon' %>
     </div>
 
     <div>

@@ -1,6 +1,6 @@
 <nav>
     <%= link_to text, url %>
-    <%= heading %>
+    <h3><%= heading %></h3>
     <% if user_signed_in? %>
       <%= link_to "Logout", sign_out_user_path, method: :get %>
     <% end %>

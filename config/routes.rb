@@ -4,10 +4,10 @@ Rails.application.routes.draw do
     root 'users#index'
     
     resources :users, only:[:index] do
-      resources :categories, only: [:index, :create, :new] do
-        resources :activities, only: [:index, :show, :create, :new]
+      resources :categories, only: [:index, :show, :create, :new] do
+        resources :activities, only: [:index, :show, :create, :new] 
+        
       end
-       
     end
     
     devise_scope :user do
