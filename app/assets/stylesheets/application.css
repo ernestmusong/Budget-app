@@ -401,8 +401,14 @@ form {
 }
 
 @media (min-width: 768px) {
-  main {
+  main,
+  nav,
+  .add_btn_wrap {
     width: 70%;
     margin: 0 auto;
+  }
+
+  .splash_text_wrap h1 {
+    font-size: 2.5rem;
   }
 }
