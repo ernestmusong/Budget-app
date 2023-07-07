@@ -24,7 +24,7 @@
 
 # 📖 [Catalog of my things] <a name="about-project"></a>
 
-**[Catalog of my things]** Blog App is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+**[Catalog of my things]** Budget App is a mobile web application where users can manage their budget: Users have a list of transactions associated with a category, so that they can see how much money they spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,7 +58,7 @@
 
 ## 🚀 Project Presentation <a name="live-demo"></a>
 
-- [Live Presentation Link](https://www.loom.com/share/1dccca6a0a594c8d8aa7e5b674fc71e3)
+- [Live Presentation Link](https://www.loom.com/share/9c944129bc504361a51c4d5355485227)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,7 +111,7 @@ sh
 
 - [ ] **[Add transaction detail]**
 - [ ] **[Email confirmation]**
-- [ ] **[User profile picture]**
+- [ ] **[User profile picture uplaod upon registration]**
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
