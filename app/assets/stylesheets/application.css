@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 
 :root {
-   --mainBlue: #3778c2;
-   --secondaryGreen: #5fb523;
-   --textColor: #434b54;
-   --mainWhite: #f0f0f0;
- }
+  --mainBlue: #3778c2;
+  --secondaryGreen: #5fb523;
+  --textColor: #434b54;
+  --mainWhite: #f0f0f0;
+}
 
 *,
 html,
@@ -19,7 +19,6 @@ body {
   color: var(--textColor);
 }
 
- 
 nav {
   display: flex;
   justify-content: space-between;
@@ -48,12 +47,17 @@ nav a {
   text-transform: capitalize;
   color: var(--mainWhite);
 }
- 
+
 .notice_wrap {
-  margin: 0 auto;
-  padding: 5px;
-  width: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
   margin-top: 60px;
+}
+
+.notice {
+  color: var(--secondaryGreen);
+  text-align: center;
 }
 
 main {
@@ -174,7 +178,7 @@ main {
   place-items: center;
 }
 
-/* -------------------------------------------File upload-----------------*/
+/* -------------------------------------------File upload----------------- */
 
 .reg {
   border-radius: 50px;
@@ -190,6 +194,7 @@ main {
   position: relative;
   padding-bottom: 0.2rem;
 }
+
 .custom-file-input {
   position: relative;
   display: inline-block;
@@ -227,8 +232,7 @@ main {
   border-radius: 50px;
 }
 
-/* -------------------------------------------End File upload-----------------*/
-
+/* -------------------------------------------End File upload----------------- */
 
 .profile_img {
   max-width: 100%;
@@ -280,17 +284,6 @@ main {
 
 #signup {
   color: #777;
-}
-
-.notice_wrap {
-  width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.notice {
-  color: var(--secondaryGreen);
-  text-align: center;
 }
 
 .btn_container #next {

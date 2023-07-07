@@ -95,6 +95,3 @@ gem 'cancancan'
 gem 'erb-formatter'
 
 gem 'sass-rails'
-
-
-

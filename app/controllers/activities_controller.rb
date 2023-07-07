@@ -26,7 +26,10 @@ class ActivitiesController < ApplicationController
 
     respond_to do |format|
       if @activity.save
-        format.html { redirect_to user_category_activities_path(current_user, @category), notice: 'Transaction was successfully created.' }
+        format.html do
+          redirect_to user_category_activities_path(current_user, @category),
+                      notice: 'Transaction was successfully created.'
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end
