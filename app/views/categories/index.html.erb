@@ -8,7 +8,7 @@
 <main>
 
   <% if @categories.blank? %>
-    <p>Your categories list is currently empty!</p><br>
+    <h3 class="empty">Your categories list is currently empty!</h3><br>
   <% else %>
     <ul id="list" class="list">
       <% @categories.each do |c| %>

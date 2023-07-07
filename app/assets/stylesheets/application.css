@@ -60,6 +60,13 @@ nav a {
   text-align: center;
 }
 
+.empty {
+  text-align: center;
+  text-transform: capitalize;
+  font-family: bold;
+  margin-top: 2rem;
+}
+
 main {
   background: var(--mainWhite);
   border: 2px solid #777;

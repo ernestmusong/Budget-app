@@ -12,7 +12,7 @@ locals: {
   </div>
 
   <% if @activities.blank? %>
-    <p>Your Transactions list is currently empty!</p><br>
+    <h3 class="empty">Your Transactions list is currently empty!</h3><br>
   <% else %>
     <ul id="list" class="list">
       <% @activities.most_recent.each do |a| %>
