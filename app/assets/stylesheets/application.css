@@ -192,6 +192,13 @@ main {
   background-color: #fff;
 }
 
+#container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 100%;
+  background: #fff;
+}
+
 #register_photo {
   display: flex;
   flex-direction: row;
@@ -200,6 +207,7 @@ main {
   background: #fff;
   position: relative;
   padding-bottom: 0.2rem;
+  border-bottom: 0.2px solid #999;
 }
 
 .custom-file-input {
@@ -322,17 +330,19 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
-  height: 50vh;
+  margin-top: 10px;
 }
 
 /* Style the form fields */
 .field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
   width: 100%;
-  max-width: 500px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background: #fff;
+
+  /* max-width: 500px; */
 }
 
 .have_account {
@@ -341,24 +351,17 @@ form {
   justify-content: space-between;
 }
 
-.field label {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
 .field input,
 .field textarea {
   font-size: 16px;
   padding: 10px;
-  border: 1px solid #777;
-  border-radius: 4px;
-  width: 100%;
+  padding-left: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: 0.2px solid #999;
+  border-top: none;
   height: 40px;
   box-sizing: border-box;
-}
-
-.field textarea {
-  height: 100px;
 }
 
 /* Style the file input */
@@ -366,6 +369,13 @@ form {
   height: auto;
   padding: 0;
   border: none;
+  border-bottom: 0.2px solid #999;
+}
+
+.field input:focus {
+  border-top: none;
+  border-bottom: 0.2px solid #999;
+  outline: none;
 }
 
 /* Style the submit button */
@@ -389,7 +399,7 @@ form {
 }
 
 .actions input[type="submit"]:hover {
-  background-color: #3e8e41;
+  opacity: 0.8;
 }
 
 .shared_links {

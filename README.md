@@ -54,7 +54,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://musong-annual-report.netlify.app/)
+- [Live Demo Link](https://musong-budget-app.onrender.com/)
 
 ## 🚀 Project Presentation <a name="live-demo"></a>
 
