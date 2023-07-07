@@ -130,7 +130,9 @@ If you like this project, give it a star please!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
  <ul>
-    <li><a href="https://www.microverse.org/">Microverse</a></li>
+    <li>
+       <a href="https://www.microverse.org/">Thank you Gregoire Vella on Behance the author of the original design.
+      </a></li>
   </ul>
 
 
