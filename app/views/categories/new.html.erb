@@ -1,30 +1,35 @@
-<h1>Add New category</h1>
+<main>
+  <%= render partial: "shared/nav",
+  locals: {
+    text: "Back",
+    url: user_categories_path(current_user),
+    heading: "ADD NEW CATEGORY"
+  } %>
 
-<%= form_with model: @category, url: user_categories_path(current_user),  method: :post do |form| %>
-  <% if @category.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited category from being saved:</h2>
+  <%= form_with model: @category, url: user_categories_path(current_user),  method: :post do |form| %>
+    <% if @category.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@category.errors.count, "error") %>
+          prohibited category from being saved:</h2>
 
-      <ul>
-        <% @category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Name" %>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :icon, placeholder: "Upload icon" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-      <%= form.label :icon %><br />
-      <%= form.file_field :icon %>
-    </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
+</main>

@@ -2,24 +2,26 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   # before_action :set_user
   # before_action :set_category, only:  %i[show edit update destroy]
-  # load_and_authorize_resource 
+  # load_and_authorize_resource
 
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @categories = @user.categories.includes(:author)
   end
 
   def show
-    @category = current_user.categories.find(params[:id])
+    @user = current_user
+    @category = @user.categories.includes(:author).find(params[:id])
     @activities = @category.activities
   end
 
   def new
-    @category = Category.new(author: current_user)
+    @category = Category.new
+    # @category = Category.new(author: current_user)
   end
 
   def create
-    @category= current_user.categories.build(category_params)
+    @category = current_user.categories.build(category_params)
 
     respond_to do |format|
       if @category.save

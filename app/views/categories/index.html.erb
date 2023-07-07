@@ -1,34 +1,38 @@
+<nav>
+  <%= link_to "home", user_categories_path(@user) %>
+  <h3>categories</h3>
+  <% if user_signed_in? %>
+    <%= link_to "Logout", sign_out_user_path, method: :get %>
+  <% end %>
+</nav>
 <main>
-  <%= render partial: 'shared/nav', locals: { text: 'Back', url: user_categories_path(current_user), heading: 'CATEGORIES'  } %>
-     
-    <% if @categories.blank? %>
-      <p>Your categories list is currently empty!</p><br>
-    <% else %>
-      <ul id="list" class="list">
-        <% @categories.each do |c| %>
-          <li class="list_item">
-                <%= link_to user_category_activities_path(@user, c) %>
-                  <div class="item-wrapper">
-                    <div class="photo">
-                        <% if c.icon.present? %>
-                          <%= image_tag c.icon, class: "profile_img" %>
-                          <% else %>
-                          <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: "profile_img" %>
-                        <% end %>
-                    </div>
-                    <div class="user_name">
-                        <p><%= c.name %></p>
-                        <p>c.created_at</p>
-                    </div>
-                  </div>
-                  <p>total amount</p>
+
+  <% if @categories.blank? %>
+    <p>Your categories list is currently empty!</p><br>
+  <% else %>
+    <ul id="list" class="list">
+      <% @categories.each do |c| %>
+        <li class="list_item">
+          <%= link_to user_category_activities_path(@user, c) do %>
+            <div class="item-wrapper">
+              <div class="photo">
+                <% if c.icon.attached? %>
+                  <%= image_tag url_for(c.icon), class: "profile_img" %>
                 <% end %>
-          </li>
-        <% end %>
-      </ul>
-    
-    <div class="food_btn_wrap">
-      <a href="/users/<%=@user.id%>/categories/new">Add New Post </a>
-       <%= link_to "Add new category", new_user_category_path(@user), class: "add_btn" %>
-    </div>
+
+              </div>
+              <div class="user_name">
+                <p class="muted"><%= c.name %></p>
+                <p class="muted date"><%= c.created_at %></p>
+              </div>
+            </div>
+            <p class="amount">$<%= c.activities.sum { |a| a.amount } %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </main>
+<div class="add_btn_wrap">
+  <%= link_to "Add new category", new_user_category_path(@user), class: "add_btn" %>
+</div>

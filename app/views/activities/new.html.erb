@@ -1,35 +1,42 @@
-<h1>Add New Transaction</h1>
+<main>
+  <%= render partial: "shared/nav",
+  locals: {
+    text: "Back",
+    url: user_category_activities_path(current_user, @category),
+    heading: "ADD NEW TRANSACTION"
+  } %>
 
-<%= form_with model: @activity,  method: :post do |form| %>
-  <% if @activity.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited Transaction from being saved:</h2>
+  <%= form_with model: @activity, url: user_category_activities_path(current_user, @category),  method: :post do |form| %>
+    <% if @activity.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@category.errors.count, "error") %>
+          prohibited Transaction from being saved:</h2>
 
-      <ul>
-        <% @activity.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @activity.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Name" %>
+    </div>
+
+    <div class="field">
+      <%= form.number_field :amount, placeholder: "Amount" %>
+    </div>
+
+    <div class="field">
+      <%= form.collection_select :category_id,
+                             Category.all,
+                             :id,
+                             :name,
+                             include_blank: "Select category" %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount %><br />
-    <%= form.number_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :categories %><br />
-    <%= form.file_field :categories %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-
