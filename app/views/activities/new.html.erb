@@ -30,7 +30,7 @@
 
     <div class="field">
       <%= form.collection_select :category_id,
-                             Category.all,
+                             current_user.categories,
                              :id,
                              :name,
                              include_blank: "Select category" %>

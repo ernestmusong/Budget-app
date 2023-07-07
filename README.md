@@ -48,7 +48,7 @@
 - **[User signup]**
 - **[User Login]**
 - **[Add new category]**
-- **[Add new tranzation]**
+- **[Add new transactiontion]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
