@@ -1,5 +1,5 @@
 <a name="readme-top"></a>
-  <h3><b>Blog app</b></h3>
+  <h3><b>Budget app</b></h3>
 
 # 📗 Table of Contents
 
@@ -24,7 +24,7 @@
 
 # 📖 [Catalog of my things] <a name="about-project"></a>
 
-**[Catalog of my things]** Blog App is a web application that allows users to create, read, update, and delete blog posts. Users can sign up for an account, create new blog posts, and edit or delete their existing posts.
+**[Catalog of my things]** Blog App is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,9 +45,20 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add new post]**
-- **[Add new comment]**
-- **[Add new like]**
+- **[User signup]**
+- **[User Login]**
+- **[Add new category]**
+- **[Add new tranzation]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://musong-annual-report.netlify.app/)
+
+## 🚀 Project Presentation <a name="live-demo"></a>
+
+- [Live Presentation Link](https://www.loom.com/share/1dccca6a0a594c8d8aa7e5b674fc71e3)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -56,17 +67,25 @@
 ### Preriquisites
 
 Ruby version >= 3.0.0
+Node
+PostgresQL
 
 ### Setup
 
 Clone this repository to your desired folder:
 sh
   cd my-folder
- git clone https://github.com/ernestmusong/Blog-app.git
+ git clone https://github.com/ernestmusong/Budget-app.git
 
  ### Install:
  Run: bundle install
  Run: npm install
+
+ ### Create database:
+ Run: rails db:create
+
+ ### Create database schema:
+ Run: rails db:migrate
 
  ### Start:
  Run: rails s
@@ -86,18 +105,13 @@ sh
 - Twitter: [@MusongAkeh](https://twitter.com/MusongAkeh)
 - LinkedIn: [Musong Ernest](https://www.linkedin.com/in/musongernestakeh/)
 
-👤 **Oussama Elabdioui**
-
-- GitHub: [@codedit334](https://github.com/codedit334)
-- Twitter: [@oussedit](https://twitter.com/oussedit)
-- LinkedIn: [Oussama Elabdioui](https://www.linkedin.com/in/oussama-elabdioui-4677a41b6/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[reply to a comment]**
-- [ ] **[Search for specific blog posts based on keywords or tags]**
+- [ ] **[Add transaction detail]**
+- [ ] **[Email confirmation]**
+- [ ] **[User profile picture]**
  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,7 +119,7 @@ sh
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ernestmusong/Blog-app/issues).
+Feel free to check the [issues page](https://github.com/ernestmusong/Budget-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,6 +137,5 @@ If you like this project, give it a star please!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📝 License <a name="license"></a>
-  This project is [MIT](./LICENSE.txt) licensed.
-
+ <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

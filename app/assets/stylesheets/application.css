@@ -5,7 +5,7 @@
 :root {
    --mainBlue: #3778c2;
    --secondaryGreen: #5fb523;
-   --text: #434b54;
+   --textColor: #434b54;
    --mainWhite: #f0f0f0;
  }
 
@@ -16,6 +16,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  color: var(--textColor);
 }
 
  
@@ -94,7 +95,6 @@ main {
   text-transform: capitalize;
   font-family: 'Fasthand', cursive;
   font-weight: bold;
-  color: #777;
 }
 
 .total_transaction {
@@ -216,11 +216,11 @@ main {
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  color: #999;
+  color: #777;
 }
 
 .custom-file-input input[type="file"]:focus + label::after {
-  color: #000;
+  color: var(--textColor);
 }
 
 #p_img {
@@ -245,7 +245,7 @@ main {
   left: 0;
   right: 0;
   position: fixed;
-  border: 2px solid #999;
+  border: 2px solid #777;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -350,7 +350,7 @@ form {
 .field textarea {
   font-size: 16px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #777;
   border-radius: 4px;
   width: 100%;
   height: 40px;
