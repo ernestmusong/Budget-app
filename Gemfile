@@ -47,8 +47,6 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
-gem 'font-awesome-sass', '~> 6.4.0'
-
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'rails-controller-testing'
@@ -94,4 +92,5 @@ gem 'cancancan'
 
 gem 'erb-formatter'
 
+gem 'font-awesome-rails'
 gem 'sass-rails'

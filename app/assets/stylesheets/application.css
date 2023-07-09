@@ -1,4 +1,6 @@
-
+/*
+ *= require font-awesome
+ */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
 
@@ -69,7 +71,7 @@ nav a {
 
 main {
   background: var(--mainWhite);
-  border: 2px solid #777;
+  border: 4px solid #999;
   height: calc(100vh - 70px);
 }
 
@@ -103,9 +105,10 @@ main {
 
 .splash_text_wrap h1 {
   font-size: 1.5rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-family: 'Fasthand', cursive;
   font-weight: bold;
+  text-align: center;
 }
 
 .total_transaction {
@@ -147,12 +150,28 @@ main {
   align-items: flex-start;
 }
 
+.delete_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.33rem;
+  align-items: flex-end;
+}
+
 .date {
   font-size: 10px;
 }
 
 .muted {
   color: #777;
+}
+
+.name {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.details_link {
+  color: var(--secondaryGreen);
 }
 
 .list a,
@@ -173,7 +192,8 @@ main {
   gap: 0.5rem;
 }
 
-.amount {
+.amount,
+.transaction_num {
   font-weight: bold;
 }
 
@@ -183,6 +203,26 @@ main {
   border-radius: 4px;
   display: grid;
   place-items: center;
+}
+
+article {
+  background: #fff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+article .child {
+  border-bottom: 2px solid var(--mainWhite);
+}
+
+.amount_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* -------------------------------------------File upload----------------- */
@@ -264,7 +304,8 @@ main {
   left: 0;
   right: 0;
   position: fixed;
-  border: 2px solid #777;
+  border: 4px solid #999;
+  border-top: none;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -277,7 +318,8 @@ main {
 }
 
 .add_btn,
-.splash_btn {
+.splash_btn,
+.delete_btn {
   text-decoration: none;
   border: 2px solid var(--mainWhite);
   border-radius: 4px;
@@ -287,6 +329,14 @@ main {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   text-transform: uppercase;
+}
+
+.delete_btn {
+  background: red;
+  border: none;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  width: calc(100% - 1rem);
 }
 
 .splash_btn {
@@ -341,8 +391,6 @@ form {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   background: #fff;
-
-  /* max-width: 500px; */
 }
 
 .have_account {

@@ -6,9 +6,9 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @category = Category.find(params[:category_id])
     @activity = Activity.includes(:author, :category).find(params[:id])
-    @categories = @activity.categories
-
     respond_to do |format|
       format.html { render :show }
     end
@@ -32,6 +32,19 @@ class ActivitiesController < ApplicationController
         end
       else
         format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @user = current_user
+    @category = Category.find(params[:category_id])
+    @activity = Activity.includes(:author, :category).find(params[:id])
+    @activity.destroy
+
+    respond_to do |format|
+      format.html do
+        redirect_to user_category_activities_path(@user, @category), notice: 'Transaction was successfully deleted!'
       end
     end
   end

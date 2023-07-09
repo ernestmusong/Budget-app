@@ -29,7 +29,10 @@ locals: {
               <p class="muted date"><%= a.created_at %></p>
             </div>
           </div>
+          <div class="delete_wrap">
           <p class="amount">$<%= a.amount %></p>
+             <%= link_to "Details",  user_category_activity_path(@user, @category, a), class: "details_link" %>
+          </div>
         </li>
       <% end %>
     </ul>

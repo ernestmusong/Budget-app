@@ -1,29 +1,36 @@
+<%= render partial: "shared/nav",
+locals: {
+  text: "Back",
+  url: user_category_activities_path(@user, @category),
+  heading: "DETAILS"
+} %>
 <main>
-     <ul id="list" class="list">
-    <% @categories.each do |c| %>
-      <li class="list_item">
-            <%= link_to %>
-              <div class="item-wrapper">
-                <div class="photo">
-                    <% if c.photo.present? %>
-                    <%= image_tag c.photo, class: "profile_img" %>
-                    <% else %>
-                    <%= image_tag 'https://www.pngkey.com/png/detail/233-2332677_image-500580-placeholder-transparent.png', class: "profile_img" %>
-                    <% end %>
-                </div>
-                <div class="user_name">
-                    <p><%= c.name %></p>
-                </div>
-              </div>
-            <% end %>
-       </li>
-       <div class="created_at">
-        <p>@activity.created_at</p>
-       </div>
-       <div class="amount_wrap">
-        <p>Total Payment</p>
-        <p>@activity.amount</p>
-       </div>
-    <% end %>
-    </ul>
-</main>
+  <article>
+          <div class=" child item-wrapper">
+            <div class="photo">
+              <% if @category.icon.attached? %>
+                <%= image_tag url_for(@category.icon), class: "profile_img" %>
+              <% end %>
+
+            </div>
+            <div class="user_name">
+              <p class="muted name"><%= @activity.name %></p>
+            </div>
+          </div>
+          <div class="child">
+            <p class="muted">some description goes here!</p>
+          </div>
+        <div class="child description">
+          <p class="transaction_num">Transaction N<sup>o</sup>3412000983</p>
+           <p class="muted">
+              <i class="far fa-calendar"></i>
+              <%= @activity.created_at %></p>
+        </div>
+          <div class="child amount_wrap">
+            <p class="amount">Total payment</p>
+            <p class="amount">$<%= @activity.amount %></p>
+          </div>
+        </div>
+  </article>
+  <%= button_to "Delete transaction", user_category_activity_path(@user, @category, @activity), class: "delete_btn", method: :delete, data: { confirm: "Are you sure?" } %>
+ </main>
