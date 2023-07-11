@@ -1,33 +1,47 @@
-  <%= render partial: 'shared/nav', locals: { text: 'Back', url: root_path, heading: 'REGISTER'  } %>
+<%= render partial: "shared/nav",
+locals: {
+  text: "Back",
+  url: root_path,
+  heading: "REGISTER"
+} %>
 <main class="registrations">
-   
+
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div id="container">
-    <div class="field" id="register_photo">
-      <div class="photo reg">
-          <%= image_tag 'https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180', class: "profile_img", id: "p_img" %>               
+      <div class="field" id="register_photo">
+        <div class="photo reg">
+          <%= image_tag "https://tse4.mm.bing.net/th?id=OIP.VwOipFm0fDDr_KOzoyrgVwAAAA&pid=Api&P=0&h=180",
+          class: "profile_img",
+          id: "p_img" %>
+        </div>
+        <div class="custom-file-input">
+          <%= f.file_field :name, id: "file-upload" %>
+          <label for="file-upload" id="file-upload-label">Upload photo</label>
+        </div>
       </div>
-      <div class="custom-file-input">
-         <%= f.file_field :name, id: "file-upload" %>
-         <label for="file-upload" id="file-upload-label">Upload photo</label>
-      </div>
-    </div>
     </div>
     <div class="field">
-      <%= f.text_field :name, placeholder: 'Name' %>
-    </div>
-      
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
+      <%= f.text_field :name, placeholder: "Name" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password' %>
+      <%= f.email_field :email,
+                    autofocus: true,
+                    autocomplete: "email",
+                    placeholder: "Email" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm password' %>
+      <%= f.password_field :password,
+                       autocomplete: "new-password",
+                       placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation,
+                       autocomplete: "new-password",
+                       placeholder: "Confirm password" %>
     </div>
 
     <div class="actions">
@@ -39,6 +53,4 @@
     </div>
   <% end %>
 
- </main>
-
- 
+</main>

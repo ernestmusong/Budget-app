@@ -93,7 +93,6 @@ main {
 
 .registrations {
   height: calc(100vh - 70px);
-  position: fixed;
   border: 2px solid #777;
   left: 0;
   right: 0;
