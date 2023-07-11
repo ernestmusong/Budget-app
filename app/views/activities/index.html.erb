@@ -1,0 +1,47 @@
+<%= render partial: "shared/nav",
+locals: {
+  text: "Back",
+  url: user_categories_path(@user),
+  heading: "TRANSACTIONS"
+} %>
+<main>
+
+  <div class="total_transaction">
+    <p class="muted">Total transactions</p>
+    <p class="amount">$<%= @activities.sum { |a| a.amount } %></p>
+  </div>
+
+  <% if @activities.blank? %>
+    <h3 class="empty">Your Transactions list is currently empty!</h3>
+    <%= link_to "Add new transaction",
+  new_user_category_activity_path(@user, @category), class: "empty_link" %>
+  <% else %>
+    <ul id="list" class="list">
+      <% @activities.most_recent.each do |a| %>
+        <li class="list_item">
+          <div class="item-wrapper">
+            <div class="photo">
+              <% if @category.icon.attached? %>
+                <%= image_tag url_for(@category.icon), class: "profile_img" %>
+              <% end %>
+
+            </div>
+            <div class="user_name">
+              <p class="muted"><%= a.name %></p>
+              <p class="muted date"><%= a.created_at %></p>
+            </div>
+          </div>
+          <div class="delete_wrap">
+          <p class="amount">$<%= a.amount %></p>
+             <%= link_to "Details",  user_category_activity_path(@user, @category, a), class: "details_link" %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</main>
+<div class="add_btn_wrap">
+  <%= link_to "Add new transaction",
+  new_user_category_activity_path(@user, @category),
+  class: "add_btn" %>
+</div>

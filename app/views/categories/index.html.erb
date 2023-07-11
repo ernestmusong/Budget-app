@@ -1,0 +1,39 @@
+<nav>
+  <%= link_to "home", user_categories_path(@user) %>
+  <h3>categories</h3>
+  <% if user_signed_in? %>
+    <%= link_to "Logout", sign_out_user_path, method: :get %>
+  <% end %>
+</nav>
+<main>
+
+  <% if @categories.blank? %>
+    <h3 class="empty">Your categories list is currently empty!</h3>
+    <%= link_to "Add new category", new_user_category_path(@user), class: "empty_link" %>
+  <% else %>
+    <ul id="list" class="list">
+      <% @categories.each do |c| %>
+        <li class="list_item">
+          <%= link_to user_category_activities_path(@user, c) do %>
+            <div class="item-wrapper">
+              <div class="photo">
+                <% if c.icon.attached? %>
+                  <%= image_tag url_for(c.icon), class: "profile_img" %>
+                <% end %>
+
+              </div>
+              <div class="user_name">
+                <p class="muted"><%= c.name %></p>
+                <p class="muted date"><%= c.created_at %></p>
+              </div>
+            </div>
+            <p class="amount">$<%= c.activities.sum { |a| a.amount } %></p>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</main>
+<div class="add_btn_wrap">
+  <%= link_to "Add new category", new_user_category_path(@user), class: "add_btn" %>
+</div>
