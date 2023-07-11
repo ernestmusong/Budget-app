@@ -94,6 +94,7 @@ main {
 .registrations {
   height: calc(100vh - 70px);
   border: 2px solid #777;
+  z-index: -1;
   left: 0;
   right: 0;
   bottom: 0;
