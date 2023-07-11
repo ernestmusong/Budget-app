@@ -1,2 +1,3 @@
+# Helpers
 module ApplicationHelper
 end

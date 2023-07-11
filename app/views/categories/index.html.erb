@@ -8,7 +8,8 @@
 <main>
 
   <% if @categories.blank? %>
-    <h3 class="empty">Your categories list is currently empty!</h3><br>
+    <h3 class="empty">Your categories list is currently empty!</h3>
+    <%= link_to "Add new category", new_user_category_path(@user), class: "empty_link" %>
   <% else %>
     <ul id="list" class="list">
       <% @categories.each do |c| %>

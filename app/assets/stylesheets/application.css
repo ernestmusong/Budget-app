@@ -2,7 +2,7 @@
  *= require font-awesome
  */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fasthand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 :root {
   --mainBlue: #3778c2;
@@ -69,6 +69,11 @@ nav a {
   margin-top: 2rem;
 }
 
+.empty_link {
+  text-align: center;
+  color: var(--secondaryGreen);
+}
+
 main {
   background: var(--mainWhite);
   border: 4px solid #999;
@@ -105,8 +110,8 @@ main {
 
 .splash_text_wrap h1 {
   font-size: 1.5rem;
-  text-transform: uppercase;
-  font-family: 'Fasthand', cursive;
+  text-transform: capitalize;
+  font-family: 'Lobster', cursive;
   font-weight: bold;
   text-align: center;
 }

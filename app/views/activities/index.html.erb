@@ -12,7 +12,9 @@ locals: {
   </div>
 
   <% if @activities.blank? %>
-    <h3 class="empty">Your Transactions list is currently empty!</h3><br>
+    <h3 class="empty">Your Transactions list is currently empty!</h3>
+    <%= link_to "Add new transaction",
+  new_user_category_activity_path(@user, @category), class: "empty_link" %>
   <% else %>
     <ul id="list" class="list">
       <% @activities.most_recent.each do |a| %>
